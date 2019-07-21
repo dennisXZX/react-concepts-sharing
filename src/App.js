@@ -4,9 +4,9 @@ import './App.css';
 import ClickCounterHOC from './HOC/ClickCounter'
 import HoverCounterHOC from './HOC/HoverCounter'
 
-import ClickCounterRenderProps from './RenderProps/ClickCounter'
-import HoverCounterRenderProps from './RenderProps/HoverCounter'
-import Counter from './RenderProps/Counter'
+import ClickCounter from './RenderProps/ClickCounter'
+import HoverCounter from './RenderProps/HoverCounter'
+import CounterRenderProps from './RenderProps/Counter'
 
 function App() {
   return (
@@ -18,20 +18,24 @@ function App() {
       <hr />
 
       <h1>Render Props Example</h1>
-      <Counter
+      <CounterRenderProps
+        incrementStep={5}
         render={(count, incrementCount) => (
-          <ClickCounterRenderProps
+          <ClickCounter
             count={count}
             incrementCount={incrementCount}
+            name='Dennis'
           />
         )}
       />
 
-      <Counter
+      <CounterRenderProps
+        incrementStep={2}
         render={(count, incrementCount) => (
-          <HoverCounterRenderProps
+          <HoverCounter
             count={count}
             incrementCount={incrementCount}
+            name='Sorak'
           />
         )}
       />

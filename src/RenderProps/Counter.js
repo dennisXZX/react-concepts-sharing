@@ -6,9 +6,11 @@ class Counter extends Component {
   }
 
   incrementCount = () => {
+    const { incrementStep } = this.props
+
     this.setState(prevState => {
       return {
-        count: prevState.count + 1
+        count: prevState.count + incrementStep
       }
     })
   }

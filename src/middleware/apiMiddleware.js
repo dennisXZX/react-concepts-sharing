@@ -10,5 +10,5 @@ const apiMiddleware = ({ dispatch }) => next => action => {
   const { url, onSuccess } = action.payload;
 
   axios.get(`${process.env.BASE_URL}${url}`)
-    .then(({ data }) => dispatch(onSuccess(data)));
+    .then(({ data }) => onSuccess(data));
 };
